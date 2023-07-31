@@ -9,7 +9,12 @@ public class TestCase {
     }
 
     public void run() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        setUp();
         Method declaredMethod = WasRun.class.getDeclaredMethod(name);
         declaredMethod.invoke(this);
+    }
+
+    public void setUp() {
+
     }
 }

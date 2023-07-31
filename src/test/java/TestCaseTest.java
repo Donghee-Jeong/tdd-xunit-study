@@ -9,8 +9,14 @@ public class TestCaseTest {
     @Test
     public void testRunning() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
         WasRun test = new WasRun("testMethod");
-        assertFalse(test.wasRun);
         test.run();
         assertTrue(test.wasRun);
+    }
+
+    @Test
+    public void testSetUp() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+        WasRun test = new WasRun("testMethod");
+        test.run();
+        assertTrue(test.wasSetUp);
     }
 }
