@@ -12,9 +12,14 @@ public class TestCase {
         setUp();
         Method declaredMethod = WasRun.class.getDeclaredMethod(name);
         declaredMethod.invoke(this);
+        tearDown();
     }
 
     public void setUp() {
+
+    }
+
+    public void tearDown() {
 
     }
 }
