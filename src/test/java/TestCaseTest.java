@@ -13,4 +13,18 @@ public class TestCaseTest {
         test.run();
         assert("setUp testMethod tearDown ".equals(test.log));
     }
+
+    @Test
+    public void testResult() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+        WasRun test = new WasRun("testMethod");
+        TestResult result = test.run();
+        assert ("1 run, 0 failed".equals(result.summary()));
+    }
+
+    @Test
+    public void testFailedResult() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
+        WasRun test = new WasRun("testBrokenMethod");
+        TestResult result = test.run();
+        assert ("1 run, 1 failed".equals(result.summary()));
+    }
 }

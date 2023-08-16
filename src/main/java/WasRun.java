@@ -17,6 +17,10 @@ public class WasRun extends TestCase {
         this.log += "testMethod ";
     }
 
+    public void testBrokenMethod() throws Exception {
+        throw new Exception();
+    }
+
     @Override
     public void setUp() {
         this.wasRun = false;
