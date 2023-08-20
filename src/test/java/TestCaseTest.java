@@ -27,4 +27,12 @@ public class TestCaseTest {
         TestResult result = test.run();
         assert ("1 run, 1 failed".equals(result.summary()));
     }
+
+    @Test
+    void testFailedResultFormatting() {
+        TestResult result = new TestResult();
+        result.testStarted();
+        result.testFailed();
+        assert ("1 run, 1failed".equals(result.summary()));
+    }
 }

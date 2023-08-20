@@ -8,12 +8,16 @@ public class TestCase {
         this.name = name;
     }
 
-    public TestResult run() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public TestResult run() {
         TestResult result = new TestResult();
         result.testStarted();
         setUp();
-        Method declaredMethod = WasRun.class.getDeclaredMethod(name);
-        declaredMethod.invoke(this);
+        try {
+            Method declaredMethod = WasRun.class.getDeclaredMethod(name);
+            declaredMethod.invoke(this);
+        } catch (Exception e) {
+            result.testFailed();
+        }
         tearDown();
         return result;
     }
