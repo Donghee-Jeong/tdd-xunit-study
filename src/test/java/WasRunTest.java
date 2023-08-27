@@ -8,7 +8,8 @@ public class WasRunTest {
     public void wasRun() throws InvocationTargetException, NoSuchMethodException, IllegalAccessException {
         WasRun test = new WasRun("testMethod");
         System.out.println(test.wasRun);
-        test.run();
+        TestResult result = new TestResult();
+        test.run(result);
         System.out.println(test.wasRun);
     }
 }
